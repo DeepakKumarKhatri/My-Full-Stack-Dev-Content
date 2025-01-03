@@ -1,4 +1,4 @@
-#### <a href="https://www.youtube.com/watch?v=Ki64Cnyf_cA" target="_blank">Why does JavaScript's fetch make me wait TWICE?</a>
+#### <a href="https://www.youtube.com/watch?v=Ki64Cnyf_cA" target="_blank">Q#01 Why does JavaScript's fetch make me wait TWICE?</a>
 
 ```
 // First await: Wait for headers
@@ -27,3 +27,18 @@ let myObject = await response.json()
 - **The second await:** To get the actual response body content, you need to call a method like ```response.json()```. This method also returns a promise, because the body content might still be streaming in from the server.
   
 - The response body can be much larger than the headers and, in some cases, might take significant time to fully download.
+
+
+#### Q#02 most common most common use cases for memory leak 
+
+```Global Variables without using let, const or var```
+- Variables without let, const or var will automatically be part of a global Scope and can corrupt the global scope.
+
+```Not removing Event Listeners once their purpose is done```
+- it's important to remove event listeners once the listen to the event is completed otherwise they will listen for infinite time until web pages available.
+
+```Mindfully use the Closures```
+- Closures can retain the references for longer duration can cause memory leak 
+
+```Not cleared intervals ```
+- Uncleared setInterval() keep associated object in memory.
